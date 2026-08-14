@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cognifyz Task 2</title>
+</head>
+
+<body>
+
+    <h1>Cognifyz Technologies - Task 2</h1>
+
+    <h2>User Registration Form</h2>
+
+    <form action="/submit" method="POST" onsubmit="return validateForm()">
+
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name">
+
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+
+        <br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age">
+
+        <br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+
+        <br><br>
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword">
+
+        <br><br>
+
+        <label for="course">Choose Course:</label>
+        <select id="course" name="course">
+            <option value="">-- Select a Course --</option>
+            <option value="Full Stack Development">Full Stack Development</option>
+            <option value="Data Science">Data Science</option>
+            <option value="Artificial Intelligence">Artificial Intelligence</option>
+        </select>
+
+        <br><br>
+
+        <label>Gender:</label>
+
+        <input type="radio" id="male" name="gender" value="Male">
+        <label for="male">Male</label>
+
+        <input type="radio" id="female" name="gender" value="Female">
+        <label for="female">Female</label>
+
+        <br><br>
+
+        <label for="terms">
+            <input type="checkbox" id="terms" name="terms">
+            I agree to the terms and conditions
+        </label>
+
+        <br><br>
+
+        <button type="submit">Register</button>
+
+    </form>
+
+
+    <script>
+
+        function validateForm() {
+
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const age = document.getElementById("age").value;
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+            const course = document.getElementById("course").value;
+            const terms = document.getElementById("terms").checked;
+
+
+            // Check Full Name
+            if (name === "") {
+                alert("Please enter your full name.");
+                return false;
+            }
+
+
+            // Check Email
+            if (email === "") {
+                alert("Please enter your email.");
+                return false;
+            }
+
+
+            // Check Age
+            if (age === "" || age < 18) {
+                alert("Age must be 18 or above.");
+                return false;
+            }
+
+
+            // Check Password
+            if (password.length < 6) {
+                alert("Password must contain at least 6 characters.");
+                return false;
+            }
+
+
+            // Check Confirm Password
+            if (password !== confirmPassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+
+
+            // Check Course
+            if (course === "") {
+                alert("Please select a course.");
+                return false;
+            }
+
+
+            // Check Terms and Conditions
+            if (!terms) {
+                alert("Please accept the terms and conditions.");
+                return false;
+            }
+
+
+            // All validations passed
+            return true;
+        }
+
+    </script>
+
+</body>
+</html>
