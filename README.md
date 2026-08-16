@@ -48,3 +48,8 @@ Created a REST API using Node.js and Express.js with:
 
 Cognifyz Technologies  
 Full Stack Web Development Internship
+
+
+## 🎥 Demo Video
+
+[▶️ Watch Cognifyz Internship Demo Video](./demo%20vedio.mp4)
